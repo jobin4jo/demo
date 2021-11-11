@@ -1,9 +1,9 @@
 <p class="m-4 text-primary">System login Form</p>
 <div class="container">
-    <div class="col-md-4  w-40">
+    <div class="col-md-4 card p-3">
         <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" >
             <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
+                <label for="exampleInputEmail1">Email address</label><br>
                 <input formControlName="email" placeholder="Enter email">
 
                 
@@ -11,14 +11,14 @@
 
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
+                <label for="exampleInputPassword1">Password</label><br>
                 <input type="password" formControlName="password" placeholder="Password">
             </div>
             <!-- <div class="form-check">
                 <input type="checkbox" formControlName="name">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div> -->
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button   type="submit" class="btn btn-primary mt-3">Submit</button>
         </form>
     </div>
 
