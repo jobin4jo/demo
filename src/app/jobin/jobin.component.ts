@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+
+import { FormControl, FormGroup ,FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-jobin',
@@ -8,26 +9,40 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./jobin.component.scss']
 })
 export class JobinComponent implements OnInit {
-  public PostData:any={
+  myForm!: FormGroup;
+  // public PostData:any={
     
-      "name": "morpheus",
-      "job": "leader"
+  //     "name": "morpheus",
+  //     "job": "leader"
   
 
-  }
+  // }
 
 
   constructor(private http: HttpClient) { }
   
 
   ngOnInit(): void {
-    this.getdata()
+    this.myForm = new FormGroup({
+      password: new FormControl(''),
+      email: new FormControl(''),
+    
+    });
+
+   
+    // this.getdata()
   }
-  getdata(){
-    this.http.post('https:reqres.in/api/users',this.PostData).subscribe((data) =>{
-      console.log(data)
-    })
+  onSubmit(form: FormGroup) {
+    console.log('Valid?', form.valid); // true or false
+    console.log('Name', form.value.name);
+    console.log('Email', form.value.email);
+    console.log('Message', form.value.message);
+  }
+  // getdata(){
+  //   this.http.post('https:reqres.in/api/users',this.PostData).subscribe((data) =>{
+  //     console.log(data)
+  //   })
 
 
-  }
+  // }
 }
