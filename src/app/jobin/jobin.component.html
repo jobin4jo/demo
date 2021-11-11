@@ -1,0 +1,32 @@
+<!-- <p class="m-4 text-primary">System login Form</p>
+<div class="container">
+    <div class="col-md-4  w-40">
+        <form #myForm="ngForm" (ngSubmit)="submit(myForm)">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" [(ngModel)]="model.name" #name="ngModel"
+                    placeholder="Enter email" [ngClass]="{ 'is-invalid': myForm.submitted && email.invalid }" required>
+
+                <div *ngIf="myForm.submitted && email.invalid" class="invalid-feedback">
+                    <div *ngIf="email.errors.required">Email is required.</div>
+                    <div *ngIf="email.errors.email">Please provide valid email.</div>
+                </div>
+            </div>
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+
+</div> -->
+<!-- <timer end-time="{{endTime}}">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer> -->
+<button class="btn btn-primary">Click Me</button>
