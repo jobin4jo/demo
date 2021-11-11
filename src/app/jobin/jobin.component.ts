@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { FormControl, FormGroup ,FormBuilder} from '@angular/forms';
+import { FormControl, FormGroup ,FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-jobin',
@@ -10,6 +10,7 @@ import { FormControl, FormGroup ,FormBuilder} from '@angular/forms';
 })
 export class JobinComponent implements OnInit {
   myForm!: FormGroup;
+  fb: any;
   // public PostData:any={
     
   //     "name": "morpheus",
@@ -26,7 +27,13 @@ export class JobinComponent implements OnInit {
     this.myForm = new FormGroup({
       password: new FormControl(''),
       email: new FormControl(''),
+      message: new FormControl('')
     
+    });
+    this.myForm = this.fb.group({
+      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(15)]],
     });
 
    
