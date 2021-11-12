@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { JobinComponent } from './jobin/jobin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    JobinComponent
+    JobinComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
